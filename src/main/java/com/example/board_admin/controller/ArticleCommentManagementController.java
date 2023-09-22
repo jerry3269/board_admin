@@ -10,7 +10,7 @@ public class ArticleCommentManagementController {
 
     @GetMapping
     public String articleComments() {
-        return "management/articleComments";
+        return "management/article-comments";
     }
 
 }
