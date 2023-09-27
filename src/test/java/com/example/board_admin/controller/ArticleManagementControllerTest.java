@@ -5,7 +5,6 @@ import com.example.board_admin.domain.constant.RoleType;
 import com.example.board_admin.dto.ArticleDto;
 import com.example.board_admin.dto.UserAccountDto;
 import com.example.board_admin.service.ArticleManagementService;
-import com.jayway.jsonpath.JsonPath;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
