@@ -17,10 +17,10 @@ public record ArticleCommentClientResponse(
         );
     }
 
-    public static ArticleCommentClientResponse of(List<ArticleCommentDto> articleCommentDtos) {
+    public static ArticleCommentClientResponse of(List<ArticleCommentDto> articleComments) {
         return new ArticleCommentClientResponse(
-                new ArticleCommentClientResponse.Embedded(articleCommentDtos),
-                new ArticleCommentClientResponse.Page(articleCommentDtos.size(), articleCommentDtos.size(), 1, 0)
+                new ArticleCommentClientResponse.Embedded(articleComments),
+                new ArticleCommentClientResponse.Page(articleComments.size(), articleComments.size(), 1, 0)
         );
     }
 
