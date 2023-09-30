@@ -1,0 +1,55 @@
+package com.example.board_admin.dto;
+
+import com.example.board_admin.domain.AdminAccount;
+import com.example.board_admin.domain.constant.RoleType;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
+
+import java.time.LocalDateTime;
+import java.util.Set;
+
+public record AdminAccountDto(
+        String userId,
+        String userPassword,
+        Set<RoleType> roleTypes,
+        String email,
+        String nickname,
+        String memo,
+        LocalDateTime createdAt,
+        String createdBy,
+        LocalDateTime modifiedAt,
+        String modifiedBy
+) {
+    public static AdminAccountDto of(String userId, String userPassword, Set<RoleType> roleTypes, String email, String nickname, String memo) {
+        return AdminAccountDto.of(userId, userPassword, roleTypes, email, nickname, memo, null, null, null, null);
+    }
+
+    public static AdminAccountDto of(String userId, String userPassword, Set<RoleType> roleTypes, String email, String nickname, String memo, LocalDateTime createdAt, String createdBy, LocalDateTime modifiedAt, String modifiedBy) {
+        return new AdminAccountDto(userId, userPassword, roleTypes, email, nickname, memo, createdAt, createdBy, modifiedAt, modifiedBy);
+    }
+
+    public static AdminAccountDto from(AdminAccount entity) {
+        return AdminAccountDto.of(
+                entity.getUserId(),
+                entity.getUserPassword(),
+                entity.getRoleTypes(),
+                entity.getEmail(),
+                entity.getNickname(),
+                entity.getMemo(),
+                entity.getCreatedAt(),
+                entity.getCreatedBy(),
+                entity.getModifiedAt(),
+                entity.getModifiedBy()
+        );
+    }
+
+    public AdminAccount toEntity() {
+        return AdminAccount.of(
+                userId,
+                userPassword,
+                roleTypes,
+                email,
+                nickname,
+                memo
+        );
+    }
+}
