@@ -10,7 +10,7 @@ public record ArticleClientResponse(
         @JsonProperty("page") Page page
 ) {
 
-    public static ArticleClientResponse of() {
+    public static ArticleClientResponse empty() {
         return new ArticleClientResponse(
                 new Embedded(List.of()),
                 new Page(1, 0, 1, 0)
