@@ -1,8 +1,6 @@
 package com.example.board_admin.controller;
 
-import com.example.board_admin.config.SecurityConfig;
 import com.example.board_admin.config.TestSecurityConfig;
-import com.example.board_admin.dto.ArticleCommentDto;
 import com.example.board_admin.dto.UserAccountDto;
 import com.example.board_admin.service.UserAccountManagementService;
 import org.junit.jupiter.api.DisplayName;

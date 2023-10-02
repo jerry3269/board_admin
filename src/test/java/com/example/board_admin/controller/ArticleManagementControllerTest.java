@@ -1,8 +1,6 @@
 package com.example.board_admin.controller;
 
-import com.example.board_admin.config.SecurityConfig;
 import com.example.board_admin.config.TestSecurityConfig;
-import com.example.board_admin.domain.constant.RoleType;
 import com.example.board_admin.dto.ArticleDto;
 import com.example.board_admin.dto.UserAccountDto;
 import com.example.board_admin.service.ArticleManagementService;
@@ -18,11 +16,11 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
 import static org.mockito.BDDMockito.*;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("컨트롤러 - 게시글 관리")
