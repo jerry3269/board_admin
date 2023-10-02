@@ -1,10 +1,7 @@
 package com.example.board_admin.controller;
 
-import com.example.board_admin.config.SecurityConfig;
 import com.example.board_admin.config.TestSecurityConfig;
-import com.example.board_admin.domain.constant.RoleType;
 import com.example.board_admin.dto.ArticleCommentDto;
-import com.example.board_admin.dto.ArticleDto;
 import com.example.board_admin.dto.UserAccountDto;
 import com.example.board_admin.service.ArticleCommentManagementService;
 import org.junit.jupiter.api.DisplayName;
@@ -18,10 +15,8 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
 import static org.mockito.BDDMockito.*;
-import static org.mockito.BDDMockito.then;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
