@@ -27,7 +27,7 @@ public class AdminAccountService {
 
     @Transactional
     public AdminAccountDto saveUser(String username, String userPassword, Set<RoleType> roleTypes, String email, String nickname, String memo){
-        AdminAccount adminAccount = adminAccountRepository.save(AdminAccount.of(username, userPassword, roleTypes, email, nickname, memo));
+        AdminAccount adminAccount = adminAccountRepository.save(AdminAccount.of(username, userPassword, roleTypes, email, nickname, memo, username));
         return AdminAccountDto.from(adminAccount);
     }
 
