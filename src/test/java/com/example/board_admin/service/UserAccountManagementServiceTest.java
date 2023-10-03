@@ -111,7 +111,7 @@ class UserAccountManagementServiceTest {
             //given
             String userId = "testId";
             UserAccountDto expectedUserAccount = createUserAccountDto();
-            server.expect(requestTo(projectProperties.board().url() + "/api/userAccounts/" + userId))
+            server.expect(requestTo(projectProperties.board().url() + "/api/userAccounts/" + userId + "?projection=withoutPassword"))
                     .andRespond(withSuccess(
                             mapper.writeValueAsString(expectedUserAccount),
                             MediaType.APPLICATION_JSON
