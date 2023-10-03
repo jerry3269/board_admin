@@ -73,7 +73,7 @@ class AdminAccountControllerTest {
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
         then(adminAccountService).should().users();
     }
-    @WithMockUser(username = "tester", roles = "USER")
+    @WithMockUser(username = "tester", roles = "MANAGER")
     @DisplayName("[View][Get] 어드민 회원 삭제 - 정상 호출")
     @Test
     void givenAuthorized_whenDeletingAdminMember_thenDeletesAdminMember() throws Exception {

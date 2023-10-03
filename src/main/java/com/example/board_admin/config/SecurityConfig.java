@@ -34,7 +34,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         .mvcMatchers(HttpMethod.POST, "/**").hasAnyRole(rolesAboveManager)
                         .mvcMatchers(HttpMethod.DELETE, "/**").hasAnyRole(rolesAboveManager)
-                        .anyRequest().permitAll())
+                        .anyRequest().authenticated())
                 .formLogin(withDefaults())
                 .logout(logout -> logout.logoutSuccessUrl("/"))
                 .oauth2Login(withDefaults())
